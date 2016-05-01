@@ -1,0 +1,6 @@
+[submodule "GoogleVisualizationPython"]
+	path = GoogleVisualizationPython
+	url = https://github.com/google/google-visualization-python.git
+[submodule "FreshbooksPython"]
+	path = FreshbooksPython
+	url = https://github.com/mattc58/freshbooks.py.git

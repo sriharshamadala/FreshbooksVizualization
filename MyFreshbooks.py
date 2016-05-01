@@ -1,9 +1,7 @@
 #!/usr/bin/python
-import freshbooks
-from datetime import datetime
-from datetime import timedelta
-from GoogleVisualization import gviz_api
-from string import punctuation
+from FreshbooksPython import freshbooks
+from GoogleVisualizationPython import gviz_api
+from datetime import datetime, timedelta
 import sys
 import re
 
@@ -48,15 +46,15 @@ def CreateCustomHtmlContent(projectPhase):
             task = "[" + "{0:05.2f}".format(round(timeSpent,2)) + "] " + task
             if isGrey:
                 if (isWeekDay==5) or (isWeekDay==6):
-                    retString = retString + '<tr bgcolor="#D6D6D6"><td><font FACE="calibri" size=1 color="red">' + task + '</font></td></tr>'
+                    retString = retString + '<tr bgcolor="#D6D6D6"><td><font FACE="calibri" size=2 color="red">' + task + '</font></td></tr>'
                 else:
-                    retString = retString + '<tr bgcolor="#D6D6D6"><td><font FACE="calibri" size=1>' + task + '</font></td></tr>'
+                    retString = retString + '<tr bgcolor="#D6D6D6"><td><font FACE="calibri" size=2>' + task + '</font></td></tr>'
                 isGrey = False
             else:
                 if (isWeekDay==5) or (isWeekDay==6):
-                    retString = retString + '<tr bgcolor="white"><td><font FACE="calibri" size=1 color="red">' + task + '</font></td></tr>'
+                    retString = retString + '<tr bgcolor="white"><td><font FACE="calibri" size=2 color="red">' + task + '</font></td></tr>'
                 else:
-                    retString = retString + '<tr bgcolor="white"><td><font FACE="calibri" size=1>' + task + '</font></td></tr>'
+                    retString = retString + '<tr bgcolor="white"><td><font FACE="calibri" size=2>' + task + '</font></td></tr>'
                 isGrey = True
     retString = retString + '</table></div>'
     return retString;
